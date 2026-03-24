@@ -27,7 +27,7 @@
 此項主要目的，RTL方式實作Add Compare Select Unit，並使用不同架構Radix2x2 & Radix4 比較兩者STA & Cell Area。
 
 <p align="center">
-  <img src="./ACSU.jpg" height="600px">
+  <img src="./AUSC.jpg" height="600px">
 </p>
 <p align="center">
   <img src="./Radix2x2.jpg" height="600px">
