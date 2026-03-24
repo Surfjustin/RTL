@@ -46,7 +46,7 @@
   <img src="./ncverilog.png" height="600px">
 </p>
 
-* Design Compoler 執行synthesis並輸出STA
+* Design Compiler 執行synthesis並輸出STA
 <p align="center">
   <img src="./sta1.png" height="600px">
 </p>
