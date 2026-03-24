@@ -1,69 +1,24 @@
-# Markdown syntax guide
+# 影像處理
+此項主要目的，是作為影像處理的前置步驟，為後續實作卷積運算（Convolution）以及更進階的深度神經網路（Neural Network）架構奠定基礎。
 
-## Headers
+使用一個簡單的濾波操作，其核心概念為：針對影像中的每個像素，將其「上方像素」以及「左方像素」的數值進行相加，並將總和除以 2，作為該位置新的像素值。
 
-# This is a Heading h1
-## This is a Heading h2
-###### This is a Heading h6
+<p align="center">
+  <img src="./filter.png" height="600px">
+</p>
 
-## Emphasis
+我們將該濾波過程劃分為 A、B、C、D 四種狀態：
+* 狀態 A：初始化或輸入讀取階段，準備像素資料。
+* 狀態 B：取得左方像素的數值。
+* 狀態 C：取得上方像素的數值。
+* 狀態 D：完成加總與平均（除以 2）的運算，並輸出新的像素值。
 
-*This text will be italic*  
-_This will also be italic_
+<p align="center">
+  <img src="./state.png" height="600px">
+</p>
 
-**This text will be bold**  
-__This will also be bold__
+在此基礎上，將利用有限狀態機（Finite State Machine, FSM）來實現整體流程。
 
-_You **can** combine them_
-
-## Lists
-
-### Unordered
-
-* Item 1
-* Item 2
-* Item 2a
-* Item 2b
-    * Item 3a
-    * Item 3b
-
-### Ordered
-
-1. Item 1
-2. Item 2
-3. Item 3
-    1. Item 3a
-    2. Item 3b
-
-## Images
-
-(/image/sample.webp "This is a sample image.")
-
-## Links
-
-You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
-
-## Blockquotes
-
-> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
->
->> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
-
-## Tables
-
-| Left columns  | Right columns |
-| ------------- |:-------------:|
-| left foo      | right foo     |
-| left bar      | right bar     |
-| left baz      | right baz     |
-
-## Blocks of code
-
-```
-let message = 'Hello world';
-alert(message);
-```
-
-## Inline code
-
-This web site is using `markedjs/marked`.
+<p align="center">
+  <img src="./FSM.png" height="600px">
+</p>
